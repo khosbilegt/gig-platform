@@ -77,7 +77,7 @@ export function UserSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <div className="flex gap-2 justify-between items-center bg-gray-200 rounded-3xl px-2 mb-[25px]">
+        <div className="flex gap-2 justify-b0880 items-center bg-gray-200 rounded-3xl px-2 mb-[25px]">
           <img
             src="https://avatar.iran.liara.run/public/boy?username=Ash"
             className="w-[50px]"

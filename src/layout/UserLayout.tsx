@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { UserSidebar } from "@/components/user/UserSidebar";
+import { UserSidebar } from "@/components/user/WorkerSidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,

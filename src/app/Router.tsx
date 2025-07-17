@@ -1,4 +1,5 @@
 import UserLayout from "@/layout/UserLayout";
+import WorkerDashboard from "@/pages/WorkerDashboard";
 import { BrowserRouter, Route, Routes } from "react-router";
 
 function Router() {
@@ -9,16 +10,8 @@ function Router() {
           index
           path="*"
           element={
-            <UserLayout
-              breadcrumbs={[
-                { label: "Home", href: "/" },
-                {
-                  label: "Test",
-                  href: "/test",
-                },
-              ]}
-            >
-              <p>Test</p>
+            <UserLayout breadcrumbs={[{ label: "Home", href: "/" }]}>
+              <WorkerDashboard />
             </UserLayout>
           }
         />
