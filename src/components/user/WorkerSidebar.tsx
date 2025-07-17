@@ -5,7 +5,6 @@ import {
   SidebarGroup,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import {
   RiDashboardHorizontalLine,
@@ -13,23 +12,27 @@ import {
   RiSettings3Line,
 } from "react-icons/ri";
 import { BsThreeDots } from "react-icons/bs";
-import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router";
 
 const sidebarItems = [
   {
-    label: "Dashboard",
+    label: "Home",
     href: "/",
     icon: <RiDashboardHorizontalLine />,
   },
   {
-    label: "Profile",
-    href: "/profile",
+    label: "My Tasks",
+    href: "/tasks",
     icon: <RiUserFill />,
   },
   {
-    label: "Settings",
-    href: "/settings",
+    label: "Inbox",
+    href: "/inbox",
+    icon: <RiSettings3Line />,
+  },
+  {
+    label: "Message",
+    href: "/message",
     icon: <RiSettings3Line />,
   },
 ];
@@ -40,31 +43,24 @@ export function UserSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <h2 className="text-lg font-semibold pl-2">Gigplatform</h2>
-        <div className="relative">
-          <Input placeholder="Search" className="pr-20" />
-          <Button
-            variant="default"
-            size="sm"
-            className="absolute right-1 top-1/2 -translate-y-1/2 h-8"
-          >
-            <IoIosSearch />
-          </Button>
+        <div className="pl-4 flex gap-4 items-center">
+          <img
+            src={"https://www.cdnlogo.com/logos/t/21/trustcoin.svg"}
+            className="w-[50px]"
+          />
+          <h2 className="text-lg font-semibold">TaskHub</h2>
         </div>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup className="p-0 flex-col gap-2">
+        <SidebarGroup className="p-0 flex-col gap-2 p-4">
           {sidebarItems.map((item) => (
-            <div
-              key={item.href}
-              className={`w-full border-l-5 ${
-                window.location.pathname === item.href
-                  ? "border-black"
-                  : "text-secondary"
-              } transition duration-200`}
-            >
+            <div key={item.href} className={`w-full transition duration-200`}>
               <Button
-                className="w-full justify-start gap-2 "
+                className={`w-full justify-start gap-2 ${
+                  window.location.pathname === item.href
+                    ? "bg-gray-200"
+                    : "text-secondary"
+                }`}
                 variant="ghost"
                 onClick={() => {
                   navigate(item.href);

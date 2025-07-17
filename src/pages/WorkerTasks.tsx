@@ -1,6 +1,6 @@
 import Timetable from "@/features/schedule/Timetable";
 
-function WorkerDashboard() {
+function WorkerTasks() {
   return (
     <div>
       <Timetable />
@@ -8,4 +8,4 @@ function WorkerDashboard() {
   );
 }
 
-export default WorkerDashboard;
+export default WorkerTasks;
